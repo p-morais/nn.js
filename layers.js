@@ -56,7 +56,7 @@ Linear.prototype.backward = function(delta, eta, momentum, decay) {
 
     this.dW = nj.add(dJdW, nj.multiply(this.W, decay))
     this.dW = nj.multiply(this.dW, eta)
-    this.dw = nj.subtract(this.dW, nj.multiply(this.dW, momentum))
+    this.dW = nj.subtract(this.dW, nj.multiply(this.dW, momentum))
 
     this.W = nj.subtract(this.W, this.dW)
     this.b = nj.subtract(this.b, nj.sum(delta, 0))
